@@ -19,7 +19,7 @@
                     <img src="./assects/logo2.png" width="60px" alt="">
                     <div>
                         <h1>Sudoku</h1>
-                        <p>Pretty Puzziling</p>
+                        <!-- <p>Pretty Puzziling</p> -->
                     </div>
                 </div>
                 <div id="diff">
@@ -65,10 +65,14 @@
         </div>
     </div>
     <script src="./script.js"></script>
+        <script>
+            const popup = document.querySelector('.popup');
+            const clicked = document.querySelector('#start-btn');
+            clicked.addEventListener("click",()=>{
+                popup.style.display = "none";
+            })
+        </script>
 </body>
-<footer>
-    <p>Made by Mathew from RedFlyer coding</p>
-</footer>
 
 
 </html>

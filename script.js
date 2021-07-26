@@ -60,7 +60,7 @@ function startGame() {
   // set live to 3 and enable selecting numbers and tiles
   lives = 3;
   disableSelect = false;
-  id("lives").textContent = "lives remaining: 3";
+  id("lives").textContent = "Lives Remaining: 3";
   // Create board based on difficulty
   generateBoard(board);
   //timer
