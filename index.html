@@ -9,26 +9,40 @@
     <title>Document</title>
 </head>
 <header>
-    <div id="setup-game">
-        <div id="diff">
-            <h3>Choose Difficulty: </h3>
-            <label><input id="diff-1" type="radio" name="diff" value="easy" checked>Easy</label>
-            <label><input id="diff-2" type="radio" name="diff" value="medium">Medium</label>
-            <label><input id="diff-2" type="radio" name="diff" value="medium">Hard</label>
-        </div>
-        <div id="time">
-            <h3>Choose Time: </h3>
-            <label><input id="time-1" type="radio" name="time" value="three" checked>3 Min</label>
-            <label><input id="time-2" type="radio" name="time" value="five">5 Min</label>
-            <label><input id="time-3" type="radio" name="time" value="ten">10 Min</label>
-        </div>
-        <div class="theme">
-            <h3>Choose Theme: </h3>
-            <label><input id="theme-1" type="radio" name="theme" value="light" checked>Light</label>
-            <label><input id="theme-2" type="radio" name="theme" value="dark" checked>Dark</label>
+    <div class="popup">
+        <div class="content_box">
+            <div class="img_box">
+                <img src="./assects/logo.png" alt="logo">
+            </div>
+            <div id="content">
+                <div class="head">
+                    <img src="./assects/logo2.png" width="60px" alt="">
+                    <div>
+                        <h1>Sudoku</h1>
+                        <p>Pretty Puzziling</p>
+                    </div>
+                </div>
+                <div id="diff">
+                    <h3>Choose Difficulty: </h3>
+                    <label><input id="diff-1" type="radio" name="diff" value="easy" checked>Easy</label>
+                    <label><input id="diff-2" type="radio" name="diff" value="medium">Medium</label>
+                    <label><input id="diff-2" type="radio" name="diff" value="medium">Hard</label>
+                </div>
+                <div id="time">
+                    <h3>Choose Time: </h3>
+                    <label><input id="time-1" type="radio" name="time" value="three" checked>3 Min</label>
+                    <label><input id="time-2" type="radio" name="time" value="five">5 Min</label>
+                    <label><input id="time-3" type="radio" name="time" value="ten">10 Min</label>
+                </div>
+                <div class="theme">
+                    <h3>Choose Theme: </h3>
+                    <label><input id="theme-1" type="radio" name="theme" value="light" checked>Light</label>
+                    <label><input id="theme-2" type="radio" name="theme" value="dark" checked>Dark</label>
+                </div>
+                <button id="start-btn">Create New Game!</button>
+            </div>
         </div>
     </div>
-    <button id="start-btn">Create New Game!</button>
 </header>
 
 <body>
