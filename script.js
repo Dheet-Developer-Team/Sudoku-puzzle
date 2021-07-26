@@ -26,13 +26,36 @@ var disableSelect;
 window.onload =function(){
     // after button start is clicked
     id("start-btn").addEventListener("click",startGame);
+    //Add event listener to each number in number container 
+    for(let i=0;i<id("number-container").children.length;i++){
+        id("number-container").children[i].addEventListener("click",function(){
+            //If selecting is not desabled
+            if(!disableSelect){
+                //If number is alreasy selected
+                if(this.classList.contains("selected")){
+                    //Then remove this selection
+                    this.classList.remove("selected");
+                    selectedNum = null;
+                }else{
+                    //Dselect all other numbers
+                    for(let i=0;i<9;i++){
+                        id("number-container").children[i].classList.remove('selested');
+                    }
+                    //Selected it and selected updated num variable
+                    this.classList.add("selected");
+                    selectedNum = this;
+                    updateMove();
+                }
+            }
+        })
+    }
 }
 
 function startGame(){
     // Choose levels
     let board;
     if(id('diff-1').checked) board = easy[0];
-    else if(id('diff-1').checked) board = medium[0];
+    else if(id('diff-2').checked) board = medium[0];
     else  board = hard[0];
 
     // set live to 3 and enable selecting numbers and tiles
@@ -96,7 +119,27 @@ function generateBoard(board){
      if(board.charAt(i) != "-"){
          tile.textContent = board.charAt(i);
      }else{
-         // adding event listner
+         // adding click event listner
+         tile.addEventListener("click",function(){
+            //If selecting is not desabled
+            if(!disableSelect){
+                //If the tile is already selected
+                if(tile.classList.contains("selected")){
+                    //Then remove the selection
+                    tile.classList.remove("selected");
+                    selectedTile = null;
+                }else{
+                    //Deselected all other tiles for 
+                    for(let i=0;i<81;i++){
+                        qsa(".tile")[i].classList.remove('selected');
+                    }
+                    //Add selection & updated variable 
+                    tile.classList.add("selected");
+                    selectedTile = tile;
+                    updateMove()
+                }
+            }
+         });
      }
      // assign tile id
      tile.id = idCount;
@@ -120,8 +163,30 @@ function generateBoard(board){
  }
 }
 
+function updateMove(){
+    //If a tile and the number is selected
+    if(selectedTile && selectedTile){
+        //Set the to the currect number
+        selectedTile.textContent = selectedNum.textContent;
+        //If the number matches the curresponding key in the selected number
+        if(checkCorrect(selectedTile)){
+
+        }
+    }
+}
+
+function checkCorrect(tile){
+    //Set sollution select in difficulty selection
+    let solution;
+    if(id('diff-1').checked) solution = easy[1];
+    else if(id('diff-2').checked) solution = medium[1];
+    else  solution = hard[1];
+    //if tiles number is equalto solution's number
+    if(solution)
+}
+
 function clearPrevious(){
-    // access all tiles
+    // access all of the tiles
     let tiles = qsa(".tile");
     tiles.forEach((data)=>{
        data.remove();
