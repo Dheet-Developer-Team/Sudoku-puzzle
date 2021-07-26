@@ -67,7 +67,7 @@ p#timer, p#lives{
     align-content: flex-start;
     width: 600px;
     height: 600px;
-    box-shadow: var(--shadow-1);
+    /* box-shadow: var(--shadow-1); */
 }
 .tile{
     border: 0.1px solid black;
