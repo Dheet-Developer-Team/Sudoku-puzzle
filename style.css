@@ -3,11 +3,15 @@
 
 body{
     font-family: 'Roboto', sans-serif;
+<<<<<<< HEAD
     background-color: #333333;  
 }
 :root{
     --background-color-1: linear-gradient(145deg, #1e2024, #23272b);
     --shadow-1: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
+=======
+    background-color: white;
+>>>>>>> 871750c10d9a9e1770f4306d86178c396ebd153a
 }
 
 .hidden{
