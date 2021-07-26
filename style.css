@@ -2,17 +2,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
 
 body{
-    /* font-family: 'Otomanopee One', sans-serif; */
-    background-color: #424242;
     font-family: 'Roboto', sans-serif;
+    background-color: #333333;  
+}
+:root{
+    --background-color-1: linear-gradient(145deg, #1e2024, #23272b);
+    --shadow-1: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
 }
 
 .hidden{
     display: none;
 }
 body.dark{
-    background-color: #333333;
+    background-color: #333333;          
     color: white;
+    transition: 0.5s all ease-in-out;
+    background: var(--background-color-1);
+    /* box-shadow: var(--shadow-1); */
 }
 /* header{
     text-align: center;
@@ -48,6 +54,7 @@ p#timer, p#lives{
     margin-top:5px;
     margin-bottom: 5px;
     text-align: center;
+    box-shadow: -1px 1px 10px 0px rgba(0,0,0,0.46);
 }
 #board{
     padding-top: 10px;
@@ -60,7 +67,8 @@ p#timer, p#lives{
     height: 600px;
 }
 .tile{
-    border: 1px solid black;
+    border: 0.5px solid black;
+    border-style: dotted;
     width: 60px;
     height: 60px;
     text-align: center;
@@ -75,10 +83,10 @@ p.incorrect{
     color: red;
 }
 .rightBorder{
-    border-right: 4px solid black;
+    border-right: 3px solid black;
 }
 .bottomBorder{
-    border-bottom: 4px solid black;
+    border-bottom: 3px solid black;
 }
 footer{
     background-color: lightgray;
@@ -91,6 +99,7 @@ footer{
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+    transition: 0.5s all ease-in-out;
 }
 .content_box{
     position: relative;
@@ -102,6 +111,7 @@ footer{
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     color: #fff;
     background: linear-gradient(to right,#3f36b9 0,#20206b 100%);
+    transition: 0.5s all ease-in-out;
 }
 .content_box .img_box{
     position: relative;
