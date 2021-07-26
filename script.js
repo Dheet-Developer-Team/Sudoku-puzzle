@@ -170,8 +170,53 @@ function updateMove(){
         selectedTile.textContent = selectedNum.textContent;
         //If the number matches the curresponding key in the selected number
         if(checkCorrect(selectedTile)){
-
+            //Deselect the tiles 
+            selectedTile.classList.remove("selected");
+            selectedNum.classList.remove("selected");
+            //clear the selected variable
+            selectedNum = null;
+            selectedTile = null;
+            //if the number is not match the sollutin key
+        }else{
+            //Desable selectiing the new number
+            disableSelect = true;
+            //Make the tile return red
+            selectedTile.classList.add("incorrect");
+            //Run in one second
+            setTimeout(function() {
+                //subtract lives one
+                lives--;
+                //if no livs is left
+                if(lives === 0) {endGame();}
+                else{
+                    //if lives is not equal to 0
+                    //update
+                    id("lives").textContent = "Lives Remaining: +lives";
+                    //Renable selecting numbers
+                    disableSelect = false;
+                }
+                //Restore tile color remove selected from both
+                selectedTile.classList.remove("incorrect");
+                selectedTile.classList.remove("selected");
+                selectedNum.classList.remove("selected");
+                //clear the tiles and clear selected variables variables
+                selectedTile.textContent = "";
+                selectedTile = null;
+                selectedNum = null;
+            }, 1000);
         }
+    }
+}
+
+function endGame(){
+    //Desable moves and stop the timer
+    disableSelect =  true;
+    clearTimeout(timer);
+    //display win or loss message
+    if(lives === 0 || timeRemaining === 0){
+      id("lives").textContent = "You Lost The Game !";
+    }else{
+        id("lives").textContent = "You Won The Game !";
     }
 }
 
@@ -182,7 +227,8 @@ function checkCorrect(tile){
     else if(id('diff-2').checked) solution = medium[1];
     else  solution = hard[1];
     //if tiles number is equalto solution's number
-    if(solution)
+    if(solution.charAt(tile.id)===tile.textContent) return true;
+    else return false;
 }
 
 function clearPrevious(){
