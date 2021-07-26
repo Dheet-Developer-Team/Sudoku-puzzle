@@ -176,6 +176,10 @@ function updateMove(){
             //clear the selected variable
             selectedNum = null;
             selectedTile = null;
+            //if check the board is completed 
+            if(checkDone()){
+                endGame();
+            }
             //if the number is not match the sollutin key
         }else{
             //Desable selectiing the new number
@@ -206,6 +210,14 @@ function updateMove(){
             }, 1000);
         }
     }
+}
+
+function checkDone(){
+    let tiles = qsa(".tile");
+    for( let i=0;i< tiles.length;i++){
+        if(tiles[i].textContent === "") return false;
+    }
+    return true;
 }
 
 function endGame(){
