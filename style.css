@@ -96,11 +96,12 @@ footer{
     position: relative;
     width: 700px;
     height: 500px;
-    background-color: #fff;
+    /* background-color: #fff; */
     border-radius: 20px;
     display: flex;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    color: black;
+    color: #fff;
+    background: linear-gradient(to right,#3f36b9 0,#20206b 100%);
 }
 .content_box .img_box{
     position: relative;
@@ -115,26 +116,69 @@ footer{
     position: absolute;
     width: 250px;
     height: 250px;
-    background-color: #e7ffe0;
+    background-image: linear-gradient(
+45deg,#4a0079 0,#4202b2 50%,#4400b1 100%);
     border-radius: 50%;
+    border: 2px solid #fff;
 }
 .content_box .img_box img{
     position: relative;
     max-width: 250px;
     max-width: 250px;
+    min-width: 50px;
     z-index: 1;
 }
 .head{
+    padding-top: 2rem;
     display: flex;
     align-items: center;
 }
-/* .head > div p{
-    top: 0;
-    position: relative;
-} */
 
 .content_box .content{
     position: relative;
     width: 350px;
     height: 500px;
+}
+
+.content .head h1{
+    padding-left: 1rem;
+    font-size: 40px;
+    line-height: 67px;
+    font-weight: 900;
+    display: inline-block;
+    background: linear-gradient(
+90deg,#af6dff 0,#ff448e 25%,#ff9d57 50%,#ff38d3 75%,#00ffdc 100%);
+    background-size: cover;
+    background-position: center;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+.button-main{
+    font-size: 16px;
+    font-weight: 400;
+    padding: 0 25px;
+    margin-top: 1rem;
+    line-height: 56px;
+    outline: 0;
+    background-color: #ff1f8e;
+    border: none;
+    -webkit-border-radius: 100px;
+    border-radius: 100px;
+    display: inline-block;
+    position: relative;
+    -webkit-box-shadow: 0 10px 15px 0 rgb(233 30 99 / 15%);
+    box-shadow: 0 10px 15px 0 rgb(233 30 99 / 15%);
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+}
+
+#start-btn{
+    background: #ffbd84;
+    background: -moz-linear-gradient(left,#ffbd84 0,#ff1f8e 100%);
+    background: -webkit-linear-gradient(left,#ffbd84 0,#ff1f8e 100%);
+    background: linear-gradient(to right,#ffbd84 0,#ff1f8e 100%);
+    -webkit-box-shadow: 0 10px 15px 0 rgb(175 0 87 / 20%);
+    box-shadow: 0 10px 15px 0 rgb(175 0 87 / 20%);
 }
